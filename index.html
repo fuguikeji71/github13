@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="聚豪汇俱乐部 。">
+    <meta name="keywords" content="聚豪汇俱乐部 ">
+    <title>聚豪汇俱乐部 </title>
+    <link rel="icon" type="image/x-icon" href="tu/logo.png">
+<style>
+    /* 全局样式，设置字体、文本居中，去除默认的外边距和内边距，并设置背景图 */
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh; /* 确保body占满屏幕高度 */
+        background-image: url("tu/1.jpg");
+        /* 核心：覆盖整个屏幕，保持比例，裁剪多余部分 */
+        background-size: cover;
+        /* 居中显示，确保图片核心内容在可视区域 */
+        background-position: center center;
+        /* 固定背景，避免滚动时重复或偏移 */
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #f0f0f0; /* 兜底背景色 */
+    }
+
+    /* 响应式设计 - 手机端 */
+
+    @media (max-width: 600px) {
+        body {
+            background-image: url("tu/1.jpg");
+            background-size: cover; /* 移动端同样保持全覆盖 */
+            background-position: center center; /* 确保关键内容居中 */
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        /* 其他移动端样式不变 */
+        .header-icons img {
+            width: 100px;
+        }
+        .image-container {
+            padding: 10px;
+        }
+    }
+
+    /* 以下其他样式完全不变 */
+    .header-icons {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-icons a {
+        margin: 10px 0;
+        text-decoration: none;
+    }
+
+    .header-icons img {
+        width: 130px;
+        height: auto;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .header-icons img:hover {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+
+    .image-container {
+        margin-top: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        display: inline-block;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .image-container img:hover {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+
+    footer {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: rgba(244, 244, 244, 0.8);
+    }
+
+    .floating-button {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background-color: #007BFF;
+        color: white;
+        padding: 25px 30px;
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .floating-button:hover {
+        background-color: #0056b3;
+        transform: scale(1.1);
+    }
+
+    .header-icons a:nth-child(2) {
+        margin-left: 0;
+    }
+</style>
+</head>
+
+<body>
+    <!-- 左上角小图标 -->
+    <div class="header-icons">
+        <a href="xz1.html">
+            <img src="./tu/3.jpg" alt="图标1">
+        </a>
+    </div>
+<style>
+    /* 基础样式重置 */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+
+
+    /* 右侧客服 - 独立设置 */
+    .right-service {
+        position: fixed;
+        top: 90%;
+        right: 20px;
+        transform: translateY(-50%);
+        animation: float-right 2s ease-in-out infinite;
+        z-index: 1000;
+    }
+
+    /* 左侧客服 - 独立设置 */
+    .left-service {
+        position: fixed;
+        top: 90%;
+        left: 20px;
+        transform: translateY(-50%);
+        animation: float-left 2s ease-in-out infinite;
+        z-index: 1000;
+    }
+
+    /* 图片链接通用样式 */
+    .image-link {
+        display: block;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    /* 右侧客服图片 */
+    .right-service img {
+        width: 150px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* 左侧客服图片 */
+    .left-service img {
+        width: 300px; /* 可单独修改尺寸 */
+        height: auto;
+        border-radius: 8px; /* 可单独修改圆角 */
+    }
+
+    /* 右侧客服悬停效果 */
+    .right-service:hover {
+        transform: translateY(-50%) scale(1.1);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    /* 左侧客服悬停效果 */
+    .left-service:hover {
+        transform: translateY(-50%) scale(1.1); /* 可单独修改缩放比例 */
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)); /* 可单独修改阴影 */
+    }
+
+    /* 右侧浮动动画（可独立调整） */
+    @keyframes float-right {
+        0%, 100% {
+            transform: translateY(-50%) translateY(0);
+        }
+        50% {
+            transform: translateY(-50%) translateY(-10px);
+        }
+    }
+
+    /* 左侧浮动动画（可独立调整） */
+    @keyframes float-left {
+        0%, 100% {
+            transform: translateY(-50%) translateY(0);
+        }
+        50% {
+            transform: translateY(-50%) translateY(-10px); /* 可单独修改浮动距离 */
+        }
+    }
+
+    /* 手机端适配 - 分别设置 */
+    @media (max-width: 768px) {
+        .top-links {
+            gap: 10px;
+            max-width: 60%;
+        }
+        /* 右侧客服移动端设置 */
+        .right-service {
+            right: 10px;
+        }
+        .right-service img {
+            width: 100px !important;
+        }
+        /* 左侧客服移动端设置 */
+        .left-service {
+            left: 50px;
+        }
+        .left-service img {
+            width: 200px !important; /* 可单独修改移动端尺寸 */
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .top-links {
+            gap: 20px;
+        }
+    }
+</style>
+
+<!-- 右侧在线客服（可单独修改链接和图片） -->
+<a href="https://tawk.to/chat/6900d9366b37cd19503f4176/1j8ll105e" class="image-link right-service" target="_blank">
+    <img src="./tu/kefu.png" alt="右侧在线客服">
+</a>
+
+<!-- 左侧在线客服（可单独修改链接和图片） -->
+<a href="https://13t.cn/" class="image-link left-service" target="_blank">
+    <img src="./tu/sg.png" alt="左侧在线客服">
+</a>
+
+        <style>
+            /* 基础样式重置 */
+    
+            /* 右上角链接容器 */
+            .top-links2 {
+                position: absolute;
+                top: 3%;
+                right: 3%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                max-width: 40%;
+            }
+    
+            /* 右下角链接样式 */
+            .bottom-link2 {
+                position: absolute;
+                bottom: 8%;
+                right: 80%;
+                animation: float2 1s ease-in-out infinite; /* 修改动画名称 */
+            }
+    
+            /* 图片链接通用样式 */
+            .image-link2 {
+                display: block;
+                transition: all 0.3s ease;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            }
+    
+            .image-link2 img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+    
+            /* 悬停效果 */
+            .image-link2:hover {
+                transform: scale(1.05); /* 修改为正确的缩放值 */
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+            }
+    
+            /* 浮动动画 */
+            @keyframes float2 {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+    
+            /* 手机端适配 */
+            @media (max-width: 768px) { /* 修改为正确的媒体查询属性 */
+                .top-links2 {
+                    gap: 10px;
+                    max-width: 60%;
+                }
+                .bottom-link2 {
+                    bottom: 65%;
+                    right: 5%;
+                }
+                .bottom-link2 img {
+                    width: 100px !important;
+                }
+            }
+    
+            @media (min-width: 1200px) {
+                .top-links2 {
+                    gap: 20px;
+                }
+                .image-link2 img {
+                    min-width: 100px;
+                }
+            }
+        </style>
+        <a href="" class="image-link2 bottom-link2" target="_blank">
+            <img src="./tu/dj1.PNG" alt="点击" style="width: 150px;">
+        </a>
+
+</body>
+
+</html>
